@@ -26,7 +26,7 @@ pip install -r requirements.txt
 # No authentication needed for this demo
 python api_etl.py \
   --url "https://jsonplaceholder.typicode.com/posts" \
-  --output posts.csv \
+  --output output/posts.csv \
   --fields "userId,id,title" \
   --max-pages 2
 ```
@@ -57,7 +57,7 @@ cp .env.example .env
 # 3. Run extraction
 python api_etl.py \
   --url "https://api.example.com/data" \
-  --output data.xlsx \
+  --output output/data.xlsx \
   --max-pages 5 \
   --token-env API_TOKEN
 ```
@@ -90,7 +90,7 @@ python api_etl.py --help
 ```bash
 python api_etl.py \
   --url "https://api.github.com/users/torvalds/repos" \
-  --output torvalds_repos.csv \
+  --output output/torvalds_repos.csv \
   --fields "name,stargazers_count,language,updated_at" \
   --max-pages 1
 ```
@@ -100,7 +100,7 @@ python api_etl.py \
 ```bash
 python api_etl.py \
   --url "https://api.example.com/records" \
-  --output records.xlsx \
+  --output output/records.xlsx \
   --page-param "offset" \
   --params '{"limit":50,"status":"active"}' \
   --max-pages 10
